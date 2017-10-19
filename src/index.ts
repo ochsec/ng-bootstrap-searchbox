@@ -1,3 +1,2 @@
-export { SeedModule } from './seed.module';
-export { SeedService } from './seed.service';
-export { SeedComponent } from './seed.component';
+export { SearchboxModule } from './searchbox.module';
+export { SearchboxComponent } from './searchbox.component';

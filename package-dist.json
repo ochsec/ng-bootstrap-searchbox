@@ -1,18 +1,21 @@
 {
-	"name": "angular-npm-module-seed",
-	"version": "1.0.0",
-	"description": "Wot!",
-	"main": "bundles/npm-module-seed.umd.min.js",
+	"name": "ng2-bootstrap-searchbox",
+	"version": "0.0.1",
+	"description": "Input for filtering an array of records",
+	"main": "bundles/ng2-bootstrap-searchbox.umd.min.js",
 	"module": "index.js",
 	"typings": "index.d.ts",
 	"keywords": [
 		"angular",
 		"angular2",
-		"angular 2"
+		"angular 2",
+		"bootstrap",
+		"search",
+		"searchbox"
 	],
 	"author": {
-		"name": "",
-		"email": ""
+		"name": "Chris Ochsenreither",
+		"email": "cochsenreither@protonmail.com"
 	},
 	"license": "",
 	"repository": {

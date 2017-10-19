@@ -1,0 +1,17 @@
+<form *ngIf="records.length > 0" [formGroup]="form">
+    <div class="button-group">
+        <input class="searchbox form-control" type="text" autocomplete="off" #searchbox
+               formControlName="SearchBox"
+               [(ngModel)]="selectedEntity"
+               placeholder="Search" />
+        <i class="search-clear fa fa-times" (click)="$event.preventDefault(); clearSearch();"></i>
+        <ul class="dopdown-menu scrollable-menu" *ngIf="visible && entities && entities.length > 0" 
+            style="display:block;">
+            <li *ngFor="let entity of entities; let i = index">
+                <a class="small" style="color:black;" (click)="$event.stopPropagation(); setEntity(1);">
+                    &nbsp;{{e.DisplayName}}
+                </a>
+            </li> 
+        </ul>
+    </div>
+</form>
