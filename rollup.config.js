@@ -1,9 +1,9 @@
 export default {
 	entry: 'dist/index.js',
-	dest: 'dist/bundles/ng2-bootstrap-searchbox.umd.js',
+	dest: 'dist/bundles/ng-bootstrap-searchbox.umd.js',
 	sourceMap: false,
 	format: 'umd',
-	moduleName: 'ng.ng2-bootstrap-searchbox',
+	moduleName: 'ng.ng-bootstrap-searchbox',
 	globals: {
 		'@angular/core': 'ng.core',
 		'@angular/common': 'ng.common',

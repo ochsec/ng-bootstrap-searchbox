@@ -1,8 +1,8 @@
 {
-	"name": "ng2-bootstrap-searchbox",
+	"name": "ng-bootstrap-searchbox",
 	"version": "0.0.1",
 	"description": "Input for filtering an array of records",
-	"main": "bundles/ng2-bootstrap-searchbox.umd.min.js",
+	"main": "bundles/ng-bootstrap-searchbox.umd.min.js",
 	"module": "index.js",
 	"typings": "index.d.ts",
 	"keywords": [
