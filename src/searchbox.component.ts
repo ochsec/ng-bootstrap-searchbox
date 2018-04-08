@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angu
 import { FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
@@ -11,11 +12,13 @@ import 'rxjs/add/operator/takeUntil';
 
 @Component({
     selector: 'searchbox',
-    templateUrl: 'searchbox.component.html'
+    templateUrl: './searchbox.component.html'
 })
 export class SearchboxComponent implements OnInit, OnDestroy {
-    @Input('model') public model: any;
-    @Input('records') public records: Array<any>;
+    private _records = new BehaviorSubject<Array<any>>([]);
+    @Input('records') 
+      set records(value) { this._records.next(value); }
+      get records() { return this._records.getValue(); }
     @Output() update = new EventEmitter<Array<any>>();
     private ngUnsubscribe: Subject<void> = new Subject<void>();
     visible = false;
@@ -40,14 +43,16 @@ export class SearchboxComponent implements OnInit, OnDestroy {
             .takeUntil(this.ngUnsubscribe)
             .subscribe(data => {
                 this.update.emit(data);
+                console.log(data);
             });
-
-        this.entities = this.records;
     }
 
     searchEntities(query: string): Observable<Array<any>> {
         const term = query === null ? '' : query.trim().toLowerCase();
         const tempList = new Array<any>();
+        if (!this.entities) {
+          this.entities = this.records;
+        }
         const result = new Observable<Array<any>>(observer => {
             if (term === '') {
                 observer.next(this.entities);
