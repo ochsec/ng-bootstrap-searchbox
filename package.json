@@ -1,6 +1,6 @@
 {
   "name": "ng-bootstrap-searchbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A bootstrap-styled search box for filtering an array of records. for use with a table, list, etc.",
   "keywords": [
     "angular search box searchbox"
