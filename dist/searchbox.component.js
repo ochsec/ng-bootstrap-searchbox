@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/debounceTime';
@@ -10,10 +11,17 @@ import 'rxjs/add/operator/takeUntil';
 export var SearchboxComponent = (function () {
     function SearchboxComponent(_fb) {
         this._fb = _fb;
+        this._records = new BehaviorSubject([]);
         this.update = new EventEmitter();
         this.ngUnsubscribe = new Subject();
         this.visible = false;
     }
+    Object.defineProperty(SearchboxComponent.prototype, "records", {
+        get: function () { return this._records.getValue(); },
+        set: function (value) { this._records.next(value); },
+        enumerable: true,
+        configurable: true
+    });
     SearchboxComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.form = this._fb.group({
@@ -28,13 +36,16 @@ export var SearchboxComponent = (function () {
             .takeUntil(this.ngUnsubscribe)
             .subscribe(function (data) {
             _this.update.emit(data);
+            console.log(data);
         });
-        this.entities = this.records;
     };
     SearchboxComponent.prototype.searchEntities = function (query) {
         var _this = this;
         var term = query === null ? '' : query.trim().toLowerCase();
         var tempList = new Array();
+        if (!this.entities) {
+            this.entities = this.records;
+        }
         var result = new Observable(function (observer) {
             if (term === '') {
                 observer.next(_this.entities);
@@ -65,7 +76,7 @@ export var SearchboxComponent = (function () {
     SearchboxComponent.decorators = [
         { type: Component, args: [{
                     selector: 'searchbox',
-                    templateUrl: 'searchbox.component.html'
+                    templateUrl: './searchbox.component.html'
                 },] },
     ];
     /** @nocollapse */
@@ -73,7 +84,6 @@ export var SearchboxComponent = (function () {
         { type: FormBuilder, },
     ]; };
     SearchboxComponent.propDecorators = {
-        'model': [{ type: Input, args: ['model',] },],
         'records': [{ type: Input, args: ['records',] },],
         'update': [{ type: Output },],
     };

@@ -1,0 +1,35 @@
+{
+	"name": "ng-bootstrap-searchbox",
+	"version": "0.0.1",
+	"description": "Input for filtering an array of records",
+	"main": "bundles/ng-bootstrap-searchbox.umd.min.js",
+	"module": "index.js",
+	"typings": "index.d.ts",
+	"keywords": [
+		"angular",
+		"angular2",
+		"angular 2",
+		"bootstrap",
+		"search",
+		"searchbox"
+	],
+	"author": {
+		"name": "Chris Ochsenreither",
+		"email": "cochsenreither@protonmail.com"
+	},
+	"license": "",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"homepage": "",
+	"bugs": {
+		"url": ""
+	},
+	"peerDependencies": {
+		"@angular/core": "^2.4.0",
+		"reflect-metadata": "^0.1.8",
+		"rxjs": "^5.0.1",
+		"zone.js": "^0.7.2"
+	}
+}

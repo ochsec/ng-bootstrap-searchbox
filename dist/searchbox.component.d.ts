@@ -8,8 +8,8 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/takeUntil';
 export declare class SearchboxComponent implements OnInit, OnDestroy {
     private _fb;
-    model: any;
-    records: Array<any>;
+    private _records;
+    records: any[];
     update: EventEmitter<any[]>;
     private ngUnsubscribe;
     visible: boolean;
