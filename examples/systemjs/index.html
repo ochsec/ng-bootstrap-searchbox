@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ng-bootstrap-searchbox example</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
+
+    <!-- load libraries -->
+    <!-- polyfills for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    
+    <script src="node_modules/zone.js/dist/zone.min.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <!-- configure systemjs -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function (err) {
+        console.error(err);
+      });
+    </script>
+  </head>
+
+  <body>
+    <app></app>
+  </body>
+</html>
