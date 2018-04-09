@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var ng_bootstrap_searchbox_1 = require("ng-bootstrap-searchbox");
@@ -16,7 +17,13 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, ng_bootstrap_searchbox_1.SearchboxModule],
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                forms_1.ReactiveFormsModule,
+                http_1.HttpModule,
+                ng_bootstrap_searchbox_1.SearchboxModule
+            ],
             declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent]
         })

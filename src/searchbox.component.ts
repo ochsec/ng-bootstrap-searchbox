@@ -12,13 +12,13 @@ import 'rxjs/add/operator/takeUntil';
 
 @Component({
     selector: 'searchbox',
-    templateUrl: './searchbox.component.html'
+    templateUrl: './searchbox.component.html',
 })
 export class SearchboxComponent implements OnInit, OnDestroy {
     private _records = new BehaviorSubject<Array<any>>([]);
     @Input('records') 
-      set records(value) { this._records.next(value); }
-      get records() { return this._records.getValue(); }
+    set records(value) { this._records.next(value); }
+    get records() { return this._records.getValue(); }
     @Output() update = new EventEmitter<Array<any>>();
     private ngUnsubscribe: Subject<void> = new Subject<void>();
     visible = false;

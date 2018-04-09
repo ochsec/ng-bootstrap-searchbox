@@ -14,21 +14,25 @@ var http_1 = require("@angular/http");
 var AppComponent = /** @class */ (function () {
     function AppComponent(_http) {
         this._http = _http;
+        this.data = new Array();
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.data = new Array();
-        this._http.get("app/cities.json")
+        this._http.get("./assets/cities.json")
+            .map(function (res) { return res.json(); })
             .subscribe(function (data) {
             setTimeout(function () {
-                _this.data = data.json();
-                console.log(data[0]);
+                _this.data = data;
             }, 1000);
         });
     };
+    AppComponent.prototype.onUpdate = function (data) {
+        this.data = data;
+        console.log('Emitted: ' + data);
+    };
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'app',
+            selector: 'app-root',
             templateUrl: 'app/app.component.html'
         }),
         __metadata("design:paramtypes", [http_1.Http])

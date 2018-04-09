@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":3,"metadata":{},"exports":[{"from":"./searchbox.module","export":["SearchboxModule"]},{"from":"./searchbox.component","export":["SearchboxComponent"]}]},{"__symbolic":"module","version":1,"metadata":{},"exports":[{"from":"./searchbox.module","export":["SearchboxModule"]},{"from":"./searchbox.component","export":["SearchboxComponent"]}]}]
