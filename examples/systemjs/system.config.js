@@ -19,8 +19,16 @@
       // other libraries
       'rxjs': 'npm:rxjs',
       'ng2-data-table': 'npm:ng2-data-table/bundles/angular2-data-table.umd.min.js',
-      // 'ng-bootstrap-searchbox': 'npm:ng-bootstrap-searchbox/'
+      'ng-bootstrap-searchbox': 'npm:ng-bootstrap-searchbox/dist/bundles/ng-bootstrap-searchbox.umd.js',
       'lodash': 'npm:lodash/lodash.js'      
+    },
+
+    packages: {
+      app: {
+        main: './main.js',
+        defaultExtension: 'js'
+      },
+      rxjs: {defaultExtension: 'js'}
     }
-  })
-})
+  });
+}(this));
