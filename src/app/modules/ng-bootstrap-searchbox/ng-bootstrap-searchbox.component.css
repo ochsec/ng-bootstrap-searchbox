@@ -1,0 +1,43 @@
+.navbar-form {
+  padding: 0px 5px;
+  position: relative;
+  display: inline-block;
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
+  width: 300px;
+}
+
+.search-clear {
+  color: #bdbdbd;
+  position: relative;
+  left: -25px;
+  cursor: pointer; 
+}
+
+.search-magnifier {
+  color: #bdbdbd;
+  position: absolute;
+  left: 25px;
+  top: 15px;
+  font-size: 20px;
+}
+
+.search-box {
+  border-radius: 5px;
+  width: 300px;
+  text-indent: 30px;
+  border: 1px solid gray !important;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.search-box:focus {
+  border: 2px solid #e87525;
+  box-shadow: unset;
+  background-color: #fff9f4;
+  color: #e87525;
+}

@@ -1,0 +1,8 @@
+<div class="container">
+  <searchbox [records]="data" (update)="onUpdate($event)"></searchbox>
+  <ul>
+    <li *ngFor="let city of data">
+      {{city.name}} > {{city.region}}
+    </li>
+  </ul>
+</div>
